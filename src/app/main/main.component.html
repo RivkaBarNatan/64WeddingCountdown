@@ -1,0 +1,72 @@
+<div class="all">
+    <div class="mazal text">מזל</div>
+    <div class="good text">טוב</div>
+    <!-- <div class="board" *ngFor="let q of array; let i=index">
+        <div class="inline" *ngFor="let w of array; let j=index">
+            <div class="white squar">
+                <div *ngIf="i==0 && j==0">
+                    <img class="solider" src="../../../assets/מלכה לבנה.jpeg" (click)="open()">
+                </div>
+            </div>
+            <div class="black squar"></div>
+        </div><br>
+        <div class="inline" *ngFor="let w of array; let j=index">
+            <div class="black squar"></div>
+            <div class="white squar">
+                <div *ngIf="i==3 && j==3">
+                    <img class="solider" src="../../../assets/מלך שחור.jpeg" tooltip=" 😜!אני מחכה לך כאן">
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="board" *ngFor="let a of array; let i=index">
+        <div *ngFor="let f of firstArray; let j=index" class="inline">
+            <div class="squar" [ngClass]="{'white': f.color=='white', 'black': f.color=='black'}">
+                <span *ngIf="i==0" class="numbers">{{f.number}}</span>
+                <span *ngIf="i==1" class="numbers">{{f.number+16}}</span>
+                <span *ngIf="i==2" class="numbers">{{f.number+32}}</span>
+                <span *ngIf="i==3" class="numbers">{{f.number+48}}</span>
+                <img *ngIf="i==0 &&j==0" [ngClass]="{weddingCanopy: days == 1, canopy: days > 1}" src="../../assets/חופה.png">
+                <img *ngIf="i==0 && j==0" class="solider king" src="../../../assets/מלך שחור.jpeg" tooltip="😜!אני מחכה לך כאן">
+                <img *ngIf="f.number==days && i==0 || f.number+16==days && i==1 || f.number+32==days && i==2 || f.number+48==days && i==3" class="solider" [ngClass]="{king: days==1}" src="../../../assets/מלכה לבנה.jpeg" tooltip="כלה" (click)="open()">
+            </div>
+        </div><br>
+        <div *ngFor="let s of secondArray; let j=index" class="inline">
+            <div class="squar" [ngClass]="{'white': s.color=='white', 'black': s.color=='black'}">
+                <span *ngIf="i==0" class="numbers">{{s.number}}</span>
+                <span *ngIf="i==1" class="numbers">{{s.number+16}}</span>
+                <span *ngIf="i==2" class="numbers">{{s.number+32}}</span>
+                <span *ngIf="i==3" class="numbers">{{s.number+48}}</span>
+                <img *ngIf="s.number==days && i==0 || s.number+16==days && i==1 || s.number+32==days && i==2 || s.number+48==days && i==3" class="solider" src="../../../assets/מלכה לבנה.jpeg" tooltip="כלה" (click)="open()">
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="second">
+    <h1 data-text="Break the glass"><span>Break the glass</span></h1><br><br><br>
+    <div class="secondFont"><br>
+        <h2 class="title">!עוד {{days}} יום זה קורה</h2>
+        <p>הוא בשחור, את בלבן</p>
+        <p class="twice">ושניכם</p>
+        <p class="win">המנצחים</p>
+        <!-- <p>{{currentTime | date:'HH:mm:ss'}}</p> --><br><br><br>
+        <p class="stay">נשארו:</p>
+        <p>{{days}} ימים, {{weeks}} שבועות, {{hours}} שעות, {{minutes}} דקות, {{seconds}} שניות</p>
+        <p>{{days}} : {{weeks}} : {{hours}} : {{minutes}} : {{seconds}}</p>
+        <img class="range" src="../../assets/טבעת.png">
+    </div>
+    <img class="secondSoliderB" src="../../../assets/מלך שחור.jpeg">
+    <img class="secondSoliderW" src="../../../assets/מלכה לבנה.jpeg">
+
+</div>

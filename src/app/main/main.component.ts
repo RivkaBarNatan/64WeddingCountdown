@@ -18,12 +18,12 @@ export class MainComponent implements OnInit {
   bsModalRef: BsModalRef = new BsModalRef;
   array: Array<number> = new Array<number>(4);
   // yourDate = new Date("2021/6/22 17:30:00");
-  yourDate = new Date("2021/5/22 17:30:00");
+  yourDate = new Date("2021/6/22 17:30:00");
   days: number = 0;
   weeks: string = '';
-  hours: string = '';
-  minutes: string = '';
-  seconds: string = '';
+  hours: number = 0;
+  minutes: number = 0;
+  seconds: number = 0;
   firstArray: Array<chess> = new Array<chess>();
   secondArray: Array<chess>=new Array<chess>();
 
@@ -55,9 +55,9 @@ export class MainComponent implements OnInit {
       var diff = this.yourDate.getTime() - currentTime.getTime();
       this.days = Math.floor(diff / (60 * 60 * 24 * 1000));
       this.weeks = (this.days / 7).toLocaleString(undefined, { maximumSignificantDigits: 3 });
-      this.hours = Math.floor(diff / (1000 * 60 * 60)).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      this.minutes = (Math.floor(diff / (1000 * 60)) % 60).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      this.seconds = (Math.floor(diff / 1000) % 60).toLocaleString(undefined, { minimumIntegerDigits: 2 });
+      this.hours = (Math.floor(diff / (60 * 60 * 1000)) - (this.days * 24));
+      this.minutes = Math.floor(diff / (60 * 1000)) - ((this.days * 24 * 60) + (this.hours * 60));
+      this.seconds = Math.floor(diff / 1000) - ((this.days * 24 * 60 * 60) + (this.hours * 60 * 60) + (this.minutes * 60));
     }, 1);
   }
 

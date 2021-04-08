@@ -63,6 +63,10 @@
     margin-left: -59px;
     position: absolute;
 }
+.tooltip
+{
+    z-index: 1000000;
+}
 .numbers
 {
     color: #ae8917;
@@ -82,6 +86,13 @@
     animation: blur .75s ease-out infinite;
     text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
 
+}
+.footprint
+{
+    width: 50%;
+    margin-bottom: 120%;
+    margin-top: 25%;
+    opacity: 50%;
 }
 
 .secondFont
@@ -137,7 +148,7 @@
 .second
 {
     background-color: black;
-    height: 1000px;
+    height: 1300px;
     margin-top: -85px;
 }
 .title
@@ -147,7 +158,7 @@
 .twice
 {
     color: #bb9434;
-    animation: Swinging 1.5s ease-out infinite;
+    animation: Swinging 1s ease-out infinite;
     // animation-direction: alternate;
 }
 .win
@@ -166,16 +177,43 @@
 }
 .secondSoliderB
 {
-    width: 10%;
-    margin-top: -40%;
+    width: 11.5%;
+    margin-top: -110%;
     margin-left: 10%;
 }
 .secondSoliderW
 {
-    width: 11%;
-    margin-top: -30%;
+    width: 15%;
+    margin-top: -65.5%;
     float: right;
     margin-right: 10%;
+}
+.Shtriymel
+{
+    width: 10%;
+    margin-top: -67.8%;
+    position: absolute;
+    margin-left: 10.5%;
+}
+.rings
+{
+    margin-right: 3%;
+    display: flex;
+}
+.ring
+{
+    width: 80%;
+    margin-top: -3%;
+}
+.ringText
+{
+    margin-top: 0%;
+}
+.stayText
+{
+    margin-top: -40%;
+    font-family: cursive;
+    font-weight: bold;
 }
 h1 {
     position: relative;
@@ -277,6 +315,8 @@ h1::after {
     from {transform: scale(1); color: #bb9434;}
     to {transform: scale(2); color: #e7de5a;}
 }
+
+
 @keyframes Swinging
 {
     // from {transform: rotate(382deg);}
@@ -313,3 +353,46 @@ h1::after {
 //         transform: rotate(0deg);
 //     }
 // }
+
+.names
+{
+    font-size: 100px;
+    font-family: 'Dancing Script', cursive;
+    background: -webkit-radial-gradient(circle, #9e7828, #f0e7c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dates  
+{
+    font-family: 'Ellinia CLM', serif;
+    font-family: 'Felix007', serif;
+    animation: transitionlight .15s ease-in-out infinite;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    
+}
+
+@keyframes transitionlight
+{
+    0% {
+        background: -webkit-linear-gradient(left, #9e7828, #9e7828, #9e7828,  #f0e7c8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    10% {
+        background: -webkit-linear-gradient(left, #9e7828, #f0e7c8, #9e7828,  #9e7828);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    50%{
+        background: -webkit-linear-gradient(left, #9e7828, #f0e7c8, #9e7828, #9e7828);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    100% {
+        background: -webkit-linear-gradient(right, #9e7828, #9e7828, #9e7828,  #f0e7c8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

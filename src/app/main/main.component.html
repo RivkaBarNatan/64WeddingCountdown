@@ -1,24 +1,6 @@
 <div class="all">
     <div class="mazal text">מזל</div>
     <div class="good text">טוב</div>
-    <!-- <div class="board" *ngFor="let q of array; let i=index">
-        <div class="inline" *ngFor="let w of array; let j=index">
-            <div class="white squar">
-                <div *ngIf="i==0 && j==0">
-                    <img class="solider" src="../../../assets/מלכה לבנה.png" (click)="open()">
-                </div>
-            </div>
-            <div class="black squar"></div>
-        </div><br>
-        <div class="inline" *ngFor="let w of array; let j=index">
-            <div class="black squar"></div>
-            <div class="white squar">
-                <div *ngIf="i==3 && j==3">
-                    <img class="solider" src="../../assets/מלך שחור.png" tooltip=" 😜!אני מחכה לך כאן">
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="board" *ngFor="let a of array; let i=index">
         <div *ngFor="let f of firstArray; let j=index" class="inline">
             <div class="squar" [ngClass]="{'white': f.color=='white', 'black': f.color=='black'}">

@@ -10,7 +10,7 @@
                 <span *ngIf="i==3" class="numbers">{{f.number+48}}</span>
                 <img *ngIf="i==0 &&j==0" class="canopy"
                     src="../../assets/חופה.png">
-                <img *ngIf="i==0 && j==0" class="solider king" src="../../assets/מלך שחור.jpeg"
+                <img *ngIf="i==0 && j==0" class="solider king" src="../../assets/מלך שחור.png"
                     tooltip="😜!אני מחכה לך כאן">
                 <img *ngIf="f.number==days && i==0 || f.number+16==days && i==1 || f.number+32==days && i==2 || f.number+48==days && i==3"
                     class="solider" [ngClass]="{king: days==0}" src="../../assets/מלכה לבנה.png" tooltip="כלה"

@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   bsModalRef: BsModalRef = new BsModalRef;
   array: Array<number> = new Array<number>(4);
   // yourDate = new Date("2021/6/22 17:30:00");
-  yourDate = new Date("2021/6/12 17:30:00");
+  yourDate = new Date("2021/6/16 17:30:00");
   days: number = 0;
   weeks: string = '';
   hours: number = 0;

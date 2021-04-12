@@ -1,5 +1,5 @@
 import { Time } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BrochesComponent } from '../broches/broches.component';
 
@@ -72,5 +72,10 @@ export class MainComponent implements OnInit {
     };
     this.bsModalRef = this.modalService.show(BrochesComponent, { initialState });
     this.bsModalRef.content.closeBtnName = 'Close';
+  }
+  past(template: TemplateRef<any>)
+  {
+      this.bsModalRef = this.modalService.show(template);
+      Object.assign({}, { class: 'modalPast' })
   }
 }

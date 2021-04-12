@@ -1,6 +1,24 @@
 <div class="all">
     <div class="mazal text">מזל</div>
     <div class="good text">טוב</div>
+    <!-- <div class="board" *ngFor="let q of array; let i=index">
+        <div class="inline" *ngFor="let w of array; let j=index">
+            <div class="white squar">
+                <div *ngIf="i==0 && j==0">
+                    <img class="solider" src="../../../assets/מלכה לבנה.jpeg" (click)="open()">
+                </div>
+            </div>
+            <div class="black squar"></div>
+        </div><br>
+        <div class="inline" *ngFor="let w of array; let j=index">
+            <div class="black squar"></div>
+            <div class="white squar">
+                <div *ngIf="i==3 && j==3">
+                    <img class="solider" src="../../../assets/מלך שחור.jpeg" tooltip=" 😜!אני מחכה לך כאן">
+                </div>
+            </div>
+        </div>
+    </div> -->
     <div class="board" *ngFor="let a of array; let i=index">
         <div *ngFor="let f of firstArray; let j=index" class="inline">
             <div class="squar" [ngClass]="{'white': f.color=='white', 'black': f.color=='black'}">
@@ -8,13 +26,15 @@
                 <span *ngIf="i==1" class="numbers">{{f.number+16}}</span>
                 <span *ngIf="i==2" class="numbers">{{f.number+32}}</span>
                 <span *ngIf="i==3" class="numbers">{{f.number+48}}</span>
-                <img *ngIf="i==0 &&j==0" class="canopy"
+                <img *ngIf="i==0 &&j==0" [ngClass]="{weddingCanopy: days == 1, canopy: days > 1}"
                     src="../../assets/חופה.png">
-                <img *ngIf="i==0 && j==0" class="solider king" src="../../assets/מלך שחור.png"
+                <img *ngIf="i==0 && j==0" class="solider king" src="../../../assets/מלך שחור.jpeg"
                     tooltip="😜!אני מחכה לך כאן">
                 <img *ngIf="f.number==days && i==0 || f.number+16==days && i==1 || f.number+32==days && i==2 || f.number+48==days && i==3"
-                    class="solider" [ngClass]="{king: days==0}" src="../../assets/מלכה לבנה.png" tooltip="כלה"
+                    class="solider" [ngClass]="{king: days==1}" src="../../../assets/מלכה לבנה.jpeg" tooltip="כלה"
                     (click)="open()">
+                <img *ngIf="f.number > days && i == 0 || f.number+16>days && i==1 || f.number+32>days && i==2 || f.number+48>days && i==3" class="footprint" src="../../assets/טביעת רגל.png" (click)="past(template)">
+
             </div>
         </div><br>
         <div *ngFor="let s of secondArray; let j=index" class="inline">
@@ -24,17 +44,22 @@
                 <span *ngIf="i==2" class="numbers">{{s.number+32}}</span>
                 <span *ngIf="i==3" class="numbers">{{s.number+48}}</span>
                 <img *ngIf="s.number == days && i == 0 || s.number+16==days && i==1 || s.number+32==days && i==2 || s.number+48==days && i==3"
-                    class="solider" src="../../assets/מלכה לבנה.png" tooltip="כלה" (click)="open()">
-                <img *ngIf="s.number > days && i == 0 || s.number+16>days && i==1 || s.number+32>days && i==2 || s.number+48>days && i==3" class="footprint" src="../../assets/טביעת רגל.png">
+                    class="solider" src="../../../assets/מלכה לבנה.jpeg" tooltip="כלה" (click)="open()">
+                <img *ngIf="s.number > days && i == 0 || s.number+16>days && i==1 || s.number+32>days && i==2 || s.number+48>days && i==3" class="footprint" src="../../assets/טביעת רגל.png" (click)="past(template)">
             </div>
         </div>
     </div>
     <br>
 </div>
 
+<!-- Modal past -->
 
-
-
+    <ng-template #template>
+        <div class="modalPast">
+          יום שעובר - שוב אינו חוזר!!
+        </div>
+    </ng-template>
+  
 
 
 

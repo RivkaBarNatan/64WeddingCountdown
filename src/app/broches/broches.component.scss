@@ -1,6 +1,36 @@
 .text
 {
     text-align: center;
-    background-image: url('../../assets/רקע\ ברכה.png');
+    background-image: url('../../assets/רקע\ ברכה.jpeg');
     background-repeat: round;
+    direction: rtl;
+}
+
+.mazaltov
+{
+    font-size: 350%;
+}
+
+.naama
+{
+    text-align: center;
+    direction: rtl;
+    position: relative;
+}
+
+.naama::before
+{
+    content: "";
+    background-image: url('../../assets/רקע\ ברכה.jpeg');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+p
+{
+    position: relative;
+    font-weight: bold;
 }

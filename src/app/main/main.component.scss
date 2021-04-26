@@ -407,3 +407,32 @@ h1::after {
         -webkit-text-fill-color: transparent;
     }
 }
+
+.close
+{
+    float: left;
+    padding: 10px;
+    color: #3aa59b;
+    opacity: 1;
+}
+
+.close:hover
+{
+    color: #286963;
+}
+
+.modals
+{
+    text-align: center;
+}
+
+#headTask
+{
+    color: #278989;
+    font-size: x-large;
+    font-weight: 500;
+}
+input
+{
+    width: 50%;
+}

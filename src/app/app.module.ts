@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,9 @@ import { BrochesComponent } from './broches/broches.component';
     AppRoutingModule,
     ModalModule,
     ModalModule.forRoot(),
-    TooltipModule
+    TooltipModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   schemas: [

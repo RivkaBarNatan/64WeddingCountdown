@@ -48,9 +48,7 @@ export class MainComponent implements OnInit {
       if(!(i%8))
         j++;
       
-      this.taskForm = this.fb.group({
-        'task': [this.theTask, Validators.required]
-      });
+      
     }
 
 
@@ -67,6 +65,9 @@ export class MainComponent implements OnInit {
       this.minutes = Math.floor(diff / (60 * 1000)) - ((this.days * 24 * 60) + (this.hours * 60));
       this.seconds = Math.floor(diff / 1000) - ((this.days * 24 * 60 * 60) + (this.hours * 60 * 60) + (this.minutes * 60));
     }, 1);
+    this.taskForm = this.fb.group({
+        'task': [this.theTask, Validators.required]
+      });
   }
 
   ngOnInit(): void {

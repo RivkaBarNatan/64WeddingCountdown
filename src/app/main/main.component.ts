@@ -1,5 +1,6 @@
 import { Time } from '@angular/common';
 import { Component, OnInit, TemplateRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BrochesComponent } from '../broches/broches.component';
 
@@ -27,8 +28,10 @@ export class MainComponent implements OnInit {
   seconds: number = 0;
   firstArray: Array<chess> = new Array<chess>();
   secondArray: Array<chess>=new Array<chess>();
+  taskForm: FormGroup;
+  theTask: string | null = null;
 
-  constructor(private modalService: BsModalService) {
+  constructor(private modalService: BsModalService, private fb: FormBuilder) {
     for (let i = 1, j = 1; i <= 8; i++) {
       this.firstArray.push(
         {
@@ -44,6 +47,10 @@ export class MainComponent implements OnInit {
       )
       if(!(i%8))
         j++;
+      
+      this.taskForm = this.fb.group({
+        'task': [this.theTask, Validators.required]
+      });
     }
 
 
@@ -66,16 +73,24 @@ export class MainComponent implements OnInit {
   }
 
 
-  open() {
-    const initialState = {
-      title: this.days
-    };
-    this.bsModalRef = this.modalService.show(BrochesComponent, { initialState });
-    this.bsModalRef.content.closeBtnName = 'Close';
-  }
-  past(template: TemplateRef<any>)
+  open()
   {
-      this.bsModalRef = this.modalService.show(template);
-      Object.assign({}, { class: 'modalPast' })
+    if (this.taskForm.get('task')?.valid) {
+      const initialState = {
+        title: this.days
+      };
+      this.bsModalRef = this.modalService.show(BrochesComponent, { initialState });
+      this.bsModalRef.content.closeBtnName = 'Close';
+      this.modalService.hide(2);
+    }
+  }
+
+  past(template: TemplateRef<any>, name: string)
+  {
+    if(name=='past')
+      this.bsModalRef = this.modalService.show(template, {id: 1});
+    else if(name=='task')
+      this.bsModalRef = this.modalService.show(template, {id: 2});
+    Object.assign({}, { class: 'modalPast' })
   }
 }

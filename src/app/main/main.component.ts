@@ -17,18 +17,21 @@ interface chess {
 })
 export class MainComponent implements OnInit {
 
+  
   bsModalRef: BsModalRef | null = new BsModalRef;
   bsModalRefComponent: BsModalRef | null = new BsModalRef;
   array: Array<number> = new Array<number>(4);
-//   yourDate = new Date("2021/6/22 00:30:00");
-  yourDate = new Date("2021/6/22 23:59:00");
+  yourDate = new Date("2021/6/22 23:59:59");
+  // yourDate = new Date("2021/5/16 17:30:00");
   days: number = 0;
   weeks: string = '';
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
   firstArray: Array<chess> = new Array<chess>();
-  secondArray: Array<chess>=new Array<chess>();
+  secondArray: Array<chess> = new Array<chess>();
+  petals: Array<any> = new Array<any>();
+  randPetal: Array<string> = new Array<any>();
   taskForm: FormGroup;
   theTask: string | null = null;
 
@@ -37,18 +40,17 @@ export class MainComponent implements OnInit {
       this.firstArray.push(
         {
           number: i,
-          color: (j%2? (i%2? 'white': 'black'): (i%2? 'black': 'white'))
+          color: (j % 2 ? (i % 2 ? 'white' : 'black') : (i % 2 ? 'black' : 'white'))
         });
-      
+
       this.secondArray.push(
         {
-          number: i+8,
-          color: (j%2? (i%2? 'black': 'white'): (i%2? 'white': 'black'))
+          number: i + 8,
+          color: (j % 2 ? (i % 2 ? 'black' : 'white') : (i % 2 ? 'white' : 'black'))
         }
       )
-      if(!(i%8))
+      if (!(i % 8))
         j++;
-      
       
     }
 
@@ -66,22 +68,33 @@ export class MainComponent implements OnInit {
       this.minutes = Math.floor(diff / (60 * 1000)) - ((this.days * 24 * 60) + (this.hours * 60));
       this.seconds = Math.floor(diff / 1000) - ((this.days * 24 * 60 * 60) + (this.hours * 60 * 60) + (this.minutes * 60));
     }, 1);
-    this.taskForm = this.fb.group({
+
+
+    this.petals.push('../../assets/עלי כותרת.png',
+      '../../assets/עלי כותרת1.png',
+      '../../assets/עלי כותרת2.png',
+      '../../assets/עלי כותרת3.png',
+      '../../assets/עלי כותרת4.png');
+
+      this.taskForm = this.fb.group({
         'task': [this.theTask, Validators.required]
       });
   }
 
   ngOnInit(): void {
+    for (let i = 0; i < (64 - this.days); i++) {
+      var random = Math.floor(Math.random() * 5);
+      this.randPetal.push(this.petals[random]);
+    }
   }
 
 
-  open()
-  {
+  open() {
     if (this.taskForm.get('task')?.valid) {
       const initialState = {
         title: this.days
       };
-      his.bsModalRefComponent = this.modalService.show(BrochesComponent, { initialState });
+      this.bsModalRefComponent = this.modalService.show(BrochesComponent, { initialState });
       this.bsModalRefComponent.content.closeBtnName = 'Close';
       if(this.bsModalRef)
       {
@@ -91,8 +104,7 @@ export class MainComponent implements OnInit {
     }
   }
 
-  past(template: TemplateRef<any>, name: string)
-  {
+  past(template: TemplateRef<any>, name: string) {
     if(name=='past')
       this.bsModalRef = this.modalService.show(template, {id: 1});
     else if(name=='task')

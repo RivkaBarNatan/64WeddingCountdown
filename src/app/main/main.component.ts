@@ -18,6 +18,7 @@ interface chess {
 export class MainComponent implements OnInit {
 
   bsModalRef: BsModalRef = new BsModalRef;
+  bsModalRefComponent: BsModalRef | null = new BsModalRef;
   array: Array<number> = new Array<number>(4);
 //   yourDate = new Date("2021/6/22 00:30:00");
   yourDate = new Date("2021/6/22 23:59:00");
@@ -80,8 +81,8 @@ export class MainComponent implements OnInit {
       const initialState = {
         title: this.days
       };
-      this.bsModalRef = this.modalService.show(BrochesComponent, { initialState });
-      this.bsModalRef.content.closeBtnName = 'Close';
+      his.bsModalRefComponent = this.modalService.show(BrochesComponent, { initialState });
+      this.bsModalRefComponent.content.closeBtnName = 'Close';
       if(this.bsModalRef)
       {
         this.bsModalRef = null;

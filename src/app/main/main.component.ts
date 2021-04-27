@@ -82,7 +82,11 @@ export class MainComponent implements OnInit {
       };
       this.bsModalRef = this.modalService.show(BrochesComponent, { initialState });
       this.bsModalRef.content.closeBtnName = 'Close';
-      this.modalService.hide(2);
+      if(this.bsModalRef)
+      {
+        this.bsModalRef = null;
+        this.modalService.hide(2);
+      }
     }
   }
 

@@ -17,7 +17,7 @@ interface chess {
 })
 export class MainComponent implements OnInit {
 
-  bsModalRef: BsModalRef = new BsModalRef;
+  bsModalRef: BsModalRef | null = new BsModalRef;
   bsModalRefComponent: BsModalRef | null = new BsModalRef;
   array: Array<number> = new Array<number>(4);
 //   yourDate = new Date("2021/6/22 00:30:00");

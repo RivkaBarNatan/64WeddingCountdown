@@ -89,10 +89,10 @@ export class MainComponent implements OnInit {
   }
 
 
-  open() {
+  open(dayPast?: number) {
     if (this.taskForm.get('task')?.valid) {
-      const initialState = {
-        title: this.days
+      var initialState = {
+        title: dayPast? dayPast : this.days
       };
       this.bsModalRefComponent = this.modalService.show(BrochesComponent, { initialState });
       this.bsModalRefComponent.content.closeBtnName = 'Close';

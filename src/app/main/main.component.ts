@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
   petals: Array<any> = new Array<any>();
   randPetal: Array<string> = new Array<any>();
   taskForm: FormGroup;
-  theTask: string | null = null;
+  theTask: string | null = 'For assessment';
 
   constructor(private modalService: BsModalService, private fb: FormBuilder) {
     for (let i = 1, j = 1; i <= 8; i++) {

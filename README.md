@@ -21,4 +21,4 @@
 !והכל במראה מרהיב, מושך ונעים לעין
 ### לדוגמא כנסו [לכאן](https://braindywedding.d1e58kisue6kno.amplifyapp.com/)
 
-## rivkib211@gmail.com :להזמנות שלחו מייל
+## rivkib211@gmail.com :לפרטים והזמנות שלחו מייל

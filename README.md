@@ -1,28 +1,24 @@
 ![Image alt text](Readme.gif)
-# SBN
+# ??חברה / אחות מתחתנת בקרוב
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+## !המתנה המושלמת
 
-## Development server
+!בנתינת קישור לכלה תעשי לה את התקופה לנעימה יותר
+## ?מה צריך לעשות
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+,אוספים 64 ברכות, טיפים, מאמרים וכו' מכל הסביבה הקרובה / הרחוקה
 
-## Code scaffolding
+,את שמות החתן והכלה ותאריך החתונה כמובן
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+,rivkib211@gmail.com: שולחים למייל 
 
-## Build
+ !מקבלים קישור שאותו נותנים לכלה והרי הפלא
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+.בכל יום תוכל הכלה ללחוץ על היום הנוכחי ולקבל את הברכה / טיפ/מאמר של היום
 
-## Running unit tests
+.בנוסף, ספירה לאחור של ימים, שעות, דקות ושניות עד יום החתונה להתעדכנות בזמן אמת
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+!והכל במראה מרהיב, מושך ונעים לעין
+### לדוגמא כנסו [לכאן](https://braindywedding.d1e58kisue6kno.amplifyapp.com/)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## rivkib211@gmail.com :להזמנות שלחו מייל

@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
   bsModalRef: BsModalRef | null = new BsModalRef;
   bsModalRefComponent: BsModalRef | null = new BsModalRef;
   array: Array<number> = new Array<number>(4);
-  yourDate = new Date("2022/02/29 23:59:59");
+  yourDate = new Date("2021/06/22 23:59:59");
   // yourDate = new Date("2021/5/16 17:30:00");
   days: number = 0;
   weeks: string = '';

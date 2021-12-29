@@ -81,7 +81,8 @@
 <div class="second">
     <h1 data-text="Break the glass"><span>Break the glass</span></h1><br><br><br>
     <div class="secondFont"><br>
-        <h2 class="title">עוד {{days}} יום זה קורה!</h2>
+        <h2 *ngIf="days > 1" class="title">עוד {{days}} יום זה קורה!</h2>
+        <h2 *ngIf="days <= 1" class="title">זה קרה לפני {{absDays}} ימים!</h2>
         <p>הוא בשחור, את בלבן</p>
         <p class="twice">ושניכם</p>
         <p class="win">המנצחים</p><br><br><br>

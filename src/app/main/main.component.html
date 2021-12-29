@@ -26,12 +26,12 @@
                 <span *ngIf="i==1" class="numbers">{{f.number+16}}</span>
                 <span *ngIf="i==2" class="numbers">{{f.number+32}}</span>
                 <span *ngIf="i==3" class="numbers">{{f.number+48}}</span>
-                <img *ngIf="i==0 &&j==0" [ngClass]="{weddingCanopy: days == 1, canopy: days > 1}"
+                <img *ngIf="i==0 &&j==0" [ngClass]="{weddingCanopy: days <= 1, canopy: days > 1}"
                     src="../../assets/חופה.png">
-                <img *ngIf="i==0 && j==0" class="solider king" src="../../assets/מלך שחור.png"
+                <img *ngIf="i==0 && j==0" [ngClass]="{solider: days > 1, king: days > 1,  today: days <= 1}" src="../../assets/מלך שחור.png"
                     tooltip="😜!אני מחכה לך כאן">
                 <img *ngIf="f.number==days && i==0 || f.number+16==days && i==1 || f.number+32==days && i==2 || f.number+48==days && i==3"
-                    class="solider" [ngClass]="{king: days==1}" src="../../assets/מלכה לבנה.png" tooltip="כלה"
+                    class="solider" [ngClass]="{king: days<=1}" src="../../assets/מלכה לבנה.png" tooltip="כלה"
                     (click)="theTask? open(): past(task, 'task')">
                 <img *ngIf="f.number > days && i == 0 || f.number+16>days && i==1 || f.number+32>days && i==2 || f.number+48>days && i==3" class="footprint" src="../../assets/טביעת רגל.png" (click)="open(i==0? f.number: i==1? f.number+16: i==2? f.number+32: f.number+48)">
 

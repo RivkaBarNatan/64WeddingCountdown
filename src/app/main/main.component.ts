@@ -24,6 +24,7 @@ export class MainComponent implements OnInit {
   yourDate = new Date("2021/06/22 23:59:59");
   // yourDate = new Date("2021/5/16 17:30:00");
   days: number = 0;
+  absDays: number = 0;
   weeks: string = '';
   hours: number = 0;
   minutes: number = 0;
@@ -67,6 +68,7 @@ export class MainComponent implements OnInit {
       this.hours = (Math.floor(diff / (60 * 60 * 1000)) - (this.days * 24));
       this.minutes = Math.floor(diff / (60 * 1000)) - ((this.days * 24 * 60) + (this.hours * 60));
       this.seconds = Math.floor(diff / 1000) - ((this.days * 24 * 60 * 60) + (this.hours * 60 * 60) + (this.minutes * 60));
+      this.absDays = Math.abs(this.days);
     }, 1);
 
 
